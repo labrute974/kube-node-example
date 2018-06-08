@@ -3,6 +3,7 @@ import compression from 'compression'
 import cors from 'cors'
 import body_parser from 'body-parser'
 import log from './utils/logger'
+import routes from './routes'
 
 export default () => {
   const app = express()
@@ -18,17 +19,24 @@ export default () => {
   		requestId: req.headers["x-bct-request-id"]
   	}
 
-  	log.info({ context: req.context, message: "start_request" })
+  	log.info("start_request", { context: {} })
   	next()
   })
 
+  app.use('/', routes)
+
   app.use( (req, res, next) => {
-    log.info({ message: "end_request" })
+    log.info("end_request", { context: {} })
+    next()
   })
 
   app.use( (err, req, res, next) => {
-    log.error({ message: "" })
-    res.status(500).json({ message: "Server Error" })
+    log.error(err, { context: {} })
+    res.status(500).json({ code: "UNEXPECTED_ERROR" })
+  })
+
+  app.get('*', (req, res) => {
+    res.status(404).json({ code: "NOT_FOUND" });
   })
 
   return app

@@ -4,6 +4,7 @@ import { APP_NAME, ENVIRONMENT, PROJECT } from '../configs'
 const winstonLogger = winston.createLogger({
   format: winston.format.json(),
   exitOnError: false,
+  handleExceptions: true,
   transports: [
     new (winston.transports.Console)({ level: 'info' })
   ],

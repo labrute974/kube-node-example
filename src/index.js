@@ -1,3 +1,4 @@
+import apm from 'elastic-apm-node/start'
 import { PORT } from './configs'
 import log from './utils/logger'
 import createServer from './app'
