@@ -1,0 +1,8 @@
+{
+  "name": "bct-skeleton-node",
+  "version": "1.0.0",
+  "description": "Skeleton node application",
+  "main": "src/index.js",
+  "author": "Delivery Engineering <delivery_engineering@blockchaintech.net.au>",
+  "license": "BCT"
+}
