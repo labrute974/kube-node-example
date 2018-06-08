@@ -4,5 +4,23 @@
   "description": "Skeleton node application",
   "main": "src/index.js",
   "author": "Delivery Engineering <delivery_engineering@blockchaintech.net.au>",
-  "license": "BCT"
+  "license": "BCT",
+  "scripts": {
+    "dev": "nodemon -r babel-register -r babel-polyfill"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "winston": "3.0.0-rc5"
+  }
 }
