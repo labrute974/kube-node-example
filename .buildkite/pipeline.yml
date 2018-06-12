@@ -12,5 +12,17 @@ steps:
   - wait
 
   - label: 'Deploy to Staging'
-    command: 'make deploy-cex-staging'
+    command: 'make deploy-staging'
     branches: 'master develop deploy/*'
+
+  - block: 'Request Release'
+    branches: 'master'
+    fields:
+      - text: 'Code Name'
+        key: 'release-name'
+        hint: 'What’s the purpose for this release? :rocket:'
+        required: false
+
+  - label: 'Deploy to Production'
+    command: 'make deploy-production'
+    branches: 'master'
