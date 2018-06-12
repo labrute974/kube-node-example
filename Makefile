@@ -1,6 +1,6 @@
 .PHONY: build package deploy-%
 
-export APP_NAME := skeleton-node-express
+export APP_NAME := skeleton-express
 export AWS_ACCOUNT_PREFIX := common
 export AWS_DEFAULT_REGION := ap-southeast-2
 export COMMIT := $(shell git rev-parse --short HEAD)
