@@ -1,0 +1,19 @@
+{
+  "Class": "ecs_service",
+  "DockerImage": "${DOCKER_IMAGE}",
+  "Environment": "${ENVIRONMENT}",
+  "Project": "${PROJECT}",
+  "AppName": "${APP_NAME}",
+  "Owner": "${OWNER}",
+  "AccountPrefix": "${AWS_ACCOUNT_PREFIX}",
+  "Route53ZoneName": "common.internal",
+  "WithBackgroundTask": "false",
+  "Scheme": "int",
+  "Priority": "140",
+  "ApplicationVariables": [
+    {
+      "Name": "PORT",
+      "Value": "8080"
+    }
+  ]
+}

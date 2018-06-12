@@ -19,3 +19,10 @@ package:
 	@./scripts/download_artifact.sh target/app.tgz
 	@./scripts/build_image.sh
 	@./scripts/push_image.sh
+
+
+%-staging: env := staging
+%-production: env := production
+
+deploy-%: ecr-login
+	@ENVIRONMENT=$(env) ./scripts/deploy.sh

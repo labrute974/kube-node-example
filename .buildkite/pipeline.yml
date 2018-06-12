@@ -8,3 +8,9 @@ steps:
   - label: 'Docker image build & push'
     command: 'make package'
     branches: 'master develop deploy/*'
+
+  - wait
+
+  - label: 'Deploy to Staging'
+    command: 'make deploy-cex-staging'
+    branches: 'master develop deploy/*'
