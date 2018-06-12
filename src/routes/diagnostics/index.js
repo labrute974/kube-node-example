@@ -10,10 +10,10 @@ router.get('/quickhealth', (req, res) => {
 router.get('/health', (req, res) => {
   res.status(500).json({
     status: "ERROR",
-    services: [
+    services: {
       "service-1": "UP",
       "service-2": "fake_error"
-    ]
+    }
   })
 })
 
