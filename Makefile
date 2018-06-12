@@ -14,3 +14,7 @@ ecr-login:
 
 build: ecr-login
 	@docker-compose run --rm jsbuilder ./scripts/build.sh
+
+package:
+	@./scripts/build_image.sh
+	@./scripts/push_image.sh
