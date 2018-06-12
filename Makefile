@@ -16,5 +16,6 @@ build: ecr-login
 	@docker-compose run --rm jsbuilder ./scripts/build.sh
 
 package:
+	@./scripts/download_artifact.sh target/app.tgz
 	@./scripts/build_image.sh
 	@./scripts/push_image.sh
