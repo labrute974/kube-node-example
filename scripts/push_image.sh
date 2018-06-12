@@ -10,5 +10,5 @@ aws ecr describe-repositories --repository-name ${APP_NAME} >/dev/null || \
 aws ecr set-repository-policy --repository-name ${APP_NAME} \
     --policy-text file://./scripts/ecr_repo_permissions.json
 
-echo "--- :docker: :aws: Push the docker image ${DOCKER_IMAGE}"
-docker push "${DOCKER_IMAGE}"
+echo "--- :docker: :aws: Push the docker image ${DOCKER_IMAGE}:${COMMIT}"
+docker push "${DOCKER_IMAGE}:${COMMIT}"
