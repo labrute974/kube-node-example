@@ -1,0 +1,4 @@
+steps:
+  - label: 'Build'
+    command: 'make build'
+    artifact_paths: "target/*"

@@ -6,7 +6,8 @@
   "author": "Delivery Engineering <delivery_engineering@blockchaintech.net.au>",
   "license": "BCT",
   "scripts": {
-    "dev": "nodemon -r babel-register -r babel-polyfill src/index.js"
+    "dev": "nodemon -r babel-register -r babel-polyfill src/index.js",
+    "build": "babel src --out-dir build --source-maps"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
