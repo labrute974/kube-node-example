@@ -1,4 +1,5 @@
 import express from 'express'
+import { COMMIT, VERSION } from '../../configs'
 
 const router = express.Router()
 
@@ -7,7 +8,20 @@ router.get('/quickhealth', (req, res) => {
 })
 
 router.get('/health', (req, res) => {
-  res.json({ status: "OK" })
+  res.status(500).json({
+    status: "ERROR",
+    services: [
+      "service-1": "UP",
+      "service-2": "fake_error"
+    ]
+  })
+})
+
+router.get('/version', (req, res) => {
+  res.json({
+    "version": VERSION,
+    "commit": COMMIT
+  })
 })
 
 export default router
