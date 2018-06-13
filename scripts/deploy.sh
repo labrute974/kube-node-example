@@ -14,7 +14,7 @@ steps:
 - label: "${PROJECT}-${APP_NAME}-${ENVIRONMENT}: ${BUILDKITE_MESSAGE}"
   trigger: "bct-deploy-services"
   build:
-    branch: deploy/add_default_env 
+    branch: v1 
     env:
       APP_NAME: "${APP_NAME}"
       AWS_ACCOUNT: "${AWS_ACCOUNT_PREFIX}-${ENVIRONMENT}"
