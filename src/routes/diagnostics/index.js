@@ -1,5 +1,5 @@
 import express from 'express'
-import { COMMIT, VERSION } from '../../configs'
+import { COMMIT, DEPLOYED_AT } from '../../configs'
 
 const router = express.Router()
 
@@ -19,7 +19,7 @@ router.get('/health', (req, res) => {
 
 router.get('/version', (req, res) => {
   res.json({
-    "version": VERSION,
+    "version": DEPLOYED_AT,
     "commit": COMMIT
   })
 })
