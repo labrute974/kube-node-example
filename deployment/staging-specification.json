@@ -9,7 +9,7 @@
   "Route53ZoneName": "common.internal",
   "WithBackgroundTask": "false",
   "Scheme": "int",
-  "Priority": "10",
+  "Priority": "1",
   "ApplicationVariables": [
     {
       "Name": "PORT",
