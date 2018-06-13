@@ -24,4 +24,9 @@ router.get('/version', (req, res) => {
   })
 })
 
+router.get('/fail', (req, res) => {
+  e
+})
+
+
 export default router
