@@ -11,7 +11,7 @@
           "Sid": "repo_permissions",
           "Effect": "Allow",
           "Principal": {
-            "AWS": [ "821127731612", "485125604415" ]
+            "AWS": [ "075225791295" ]
           },
           "Action": [
             "ecr:GetDownloadUrlForLayer",
