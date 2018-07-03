@@ -11,18 +11,6 @@ steps:
 
   - wait
 
-  - label: 'Deploy to Staging'
-    command: 'make deploy-staging'
+  - label: 'Deploy to sandbox'
+    command: 'make deploy-testing'
     branches: 'master develop deploy/*'
-
-  - block: 'Request Release'
-    branches: 'master'
-    fields:
-      - text: 'Code Name'
-        key: 'release-name'
-        hint: 'What’s the purpose for this release? :rocket:'
-        required: false
-
-  - label: 'Deploy to Production'
-    command: 'make deploy-production'
-    branches: 'master'
