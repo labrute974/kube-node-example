@@ -6,7 +6,7 @@
   "AppName": "${APP_NAME}",
   "Owner": "${OWNER}",
   "AccountPrefix": "${AWS_ACCOUNT_PREFIX}",
-  "Route53ZoneName": "common.internal",
+  "Route53ZoneName": "sandbox.internal",
   "WithBackgroundTask": "false",
   "Scheme": "int",
   "Priority": "1",
