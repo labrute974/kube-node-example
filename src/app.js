@@ -31,7 +31,7 @@ export default () => {
   })
 
   app.use( (err, req, res, next) => {
-    log.error(err, { context: {} })
+    log.error("UNEXPECTED_ERROR", { error: { message: err.message, name: err.name, stack: er.stack } })
     res.status(500).json({ code: "UNEXPECTED_ERROR" })
   })
 
