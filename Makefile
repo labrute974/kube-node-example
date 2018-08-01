@@ -1,6 +1,5 @@
 .PHONY: build package deploy-%
 
-export APP_NAME := skeleton-express
 export AWS_ACCOUNT_PREFIX := sandbox
 export AWS_DEFAULT_REGION := ap-southeast-2
 export COMMIT := $(shell git rev-parse --short HEAD)
@@ -23,7 +22,9 @@ package:
 deploy-%: env := testing
 
 deploy-%: project := internal
+deploy-%: appName := skeleton-express
 deploy-background-%: project := background
+deploy-background-%: appName := skeleton-express-bg
 
 deploy-%: ecr-login
-	@ENVIRONMENT=$(env) PROJECT=$(project) ./scripts/deploy.sh
+	@ENVIRONMENT=$(env) PROJECT=$(project) APP_NAME=$(appName) ./scripts/deploy.sh
