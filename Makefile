@@ -6,7 +6,6 @@ export AWS_DEFAULT_REGION := ap-southeast-2
 export COMMIT := $(shell git rev-parse --short HEAD)
 export DOCKER_IMAGE = 106251776774.dkr.ecr.ap-southeast-2.amazonaws.com/$(APP_NAME)
 export OWNER := delivery_engineering@blockchaintech.net.au
-export PROJECT := internal
 
 ecr-login:
 	@eval `aws ecr get-login --no-include-email`
@@ -21,8 +20,9 @@ package:
 	@./scripts/push_image.sh
 
 
-%-testing: env := testing
+deploy-%: env := testing
 
+deploy-%: project := internal
 deploy-background-%: project := background
 
 deploy-%: ecr-login
