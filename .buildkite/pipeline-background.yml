@@ -12,5 +12,5 @@ steps:
   - wait
 
   - label: 'Deploy to sandbox'
-    command: 'make deploy-testing'
+    command: 'make deploy-background-testing'
     branches: 'master develop deploy/*'
