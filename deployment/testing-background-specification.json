@@ -9,7 +9,7 @@
   "Route53ZoneName": "sandbox.internal",
   "WithBackgroundTask": "true",
   "Scheme": "int",
-  "Priority": "1",
+  "Priority": "2",
   "ApplicationVariables": [
     {
       "Name": "PORT",
