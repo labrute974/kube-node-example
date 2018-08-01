@@ -1,0 +1,16 @@
+steps:
+  - label: 'Build'
+    command: 'make build'
+    artifact_paths: "target/*"
+
+  - wait
+
+  - label: 'Docker image build & push'
+    command: 'make package'
+    branches: 'master develop deploy/*'
+
+  - wait
+
+  - label: 'Deploy to sandbox'
+    command: 'make deploy-testing'
+    branches: 'master develop deploy/*'

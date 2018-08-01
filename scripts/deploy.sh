@@ -3,7 +3,7 @@
 set -euo pipefail
 
 echo "--- upload specification file to s3"
-cat ./deployment/${ENVIRONMENT}-specification.json | \
+cat ./deployment/${ENVIRONMENT}-${PROJECT}-specification.json | \
   docker-compose run --rm -e APP_NAME -e AWS_ACCOUNT_PREFIX \
     -e DOCKER_IMAGE -e ENVIRONMENT -e OWNER -e PROJECT -e COMMIT \
     build-helper envsubst 2>/dev/null | \

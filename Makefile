@@ -23,5 +23,7 @@ package:
 
 %-testing: env := testing
 
+deploy-background-%: project := background
+
 deploy-%: ecr-login
-	@ENVIRONMENT=$(env) ./scripts/deploy.sh
+	@ENVIRONMENT=$(env) PROJECT=$(project) ./scripts/deploy.sh
