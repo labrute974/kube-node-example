@@ -21,7 +21,7 @@ package:
 	@./scripts/push_image.sh
 
 
-%-testing: env := testing
+deploy-%: env := testing
 
 deploy-%: ecr-login
 	@ENVIRONMENT=$(env) ./scripts/deploy.sh
