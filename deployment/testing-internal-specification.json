@@ -7,8 +7,8 @@
   "Owner": "${OWNER}",
   "AccountPrefix": "${AWS_ACCOUNT_PREFIX}",
   "Route53ZoneName": "sandbox.internal",
-  "WithBackgroundTask": "true",
-  "WithBackgroundTaskHealthCheck": "true",
+  "WithBackgroundTask": "false",
+  "WithBackgroundTaskHealthCheck": "false",
   "Scheme": "int",
   "Priority": "1",
   "ApplicationVariables": [

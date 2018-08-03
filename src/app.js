@@ -12,23 +12,7 @@ export default () => {
   app.use( compression() )
   app.use( body_parser.json({ limit: '50mb' }) )
 
-  /* log incoming queries */
-  app.use( (req, res, next) => {
-  	req.context = {
-  		userId: req.headers["x-bct-user-id"],
-  		requestId: req.headers["x-bct-request-id"]
-  	}
-
-  	log.info("start_request", { context: {} })
-  	next()
-  })
-
   app.use('/', routes)
-
-  app.use( (req, res, next) => {
-    log.info("end_request", { context: {} })
-    next()
-  })
 
   app.use( (err, req, res, next) => {
     log.error("UNEXPECTED_ERROR", { error: { message: err.message, name: err.name, stack: er.stack } })

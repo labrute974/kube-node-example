@@ -1,5 +1,6 @@
 import express from 'express'
 import { COMMIT, DEPLOYED_AT } from '../../configs'
+import log from '../../../utils/logger'
 
 const router = express.Router()
 
@@ -18,6 +19,7 @@ router.get('/health', (req, res) => {
 })
 
 router.get('/version', (req, res) => {
+  log.info(COMMIT)
   res.json({
     "version": DEPLOYED_AT,
     "commit": COMMIT
