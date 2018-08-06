@@ -1,6 +1,6 @@
 import express from 'express'
 import { COMMIT, DEPLOYED_AT } from '../../configs'
-import log from '../../../utils/logger'
+import log from '../../utils/logger'
 
 const router = express.Router()
 
