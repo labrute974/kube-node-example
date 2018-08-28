@@ -9,6 +9,7 @@
   "Route53ZoneName": "sandbox.internal",
   "WithBackgroundTask": "false",
   "WithBackgroundTaskHealthCheck": "false",
+  "ExposedHost": "test.hostname",
   "Scheme": "int",
   "Priority": "1",
   "ApplicationVariables": [
