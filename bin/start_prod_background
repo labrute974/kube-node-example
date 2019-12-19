@@ -1,5 +1,0 @@
-#!/bin/bash
-set -e
-
-echo 'run background task'
-forever ./index.js
