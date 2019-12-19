@@ -1,19 +1,13 @@
 version: '3'
 services:
   build-helper:
-    image: 106251776774.dkr.ecr.ap-southeast-2.amazonaws.com/bct-build-helper:latest
+    image: node:alpine
     volumes:
       - ".:/build"
-    environment:
-      AWS_DEFAULT_REGION:
-      AWS_ACCESS_KEY_ID:
-      AWS_SECRET_ACCESS_KEY:
-      AWS_SESSION_TOKEN:
-      AWS_PROFILE:
     working_dir: /build
 
   jsbuilder:
-    image: 106251776774.dkr.ecr.ap-southeast-2.amazonaws.com/bct-jsbuilder:latest
+    image: node:alpine
     volumes:
       - ".:/build"
     working_dir: /build
